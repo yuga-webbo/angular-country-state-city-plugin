@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #0f0f0f;
+  border-color: #0f0f0f;
+}
+
+.csc-section {
+  display: flex;
+  padding: 2em;
+  width: 100vw;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.display-container {
+  width: 40%;
+  min-width: 400px;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.2);
+  padding: 2em;
+  background-color: aliceblue;
+  border-radius: 1em;
+  flex: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: fit-content;
+  min-width: fit-content;
+  padding: 2em;
+  border-radius: 1em;
+  background-color: azure;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.2);
+  flex: 1;
+}
+
+form select {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border-radius: 2em;
+}
+
+fieldset {
+  background-color: white;
+  border-radius: 1em;
+  padding: 1em;
+  border: transparent;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  padding: 1em;
+  border-radius: 1em;
+  background-color: white;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.2);
+  font-size: 1.2em;
+}
+
+h2 span {
+  float: right;
+  color: red;
+  cursor: pointer;
+  transition: all .2s ease;
+  border-radius: 100%;
+}
+
+h2 span:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 7px rgba(0, 20, 70, 0.2);
+}

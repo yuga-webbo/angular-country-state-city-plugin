@@ -1,0 +1,63 @@
+<section class="csc-section">
+  <div class="display-container">
+    <h2 *ngIf="selectedCountry">
+      Country: {{selectedCountry.flag}}&nbsp;&nbsp;{{ selectedCountry.name }}
+      <span (click)="clear('country')">&#8855;</span>
+    </h2>
+    <h2 *ngIf="selectedState">
+      State: {{ selectedState.name }}
+      <span (click)="clear('state')">&#8855;</span>
+    </h2>
+    <h2 *ngIf="selectedCity">
+      City: {{ selectedCity.name }} <span (click)="clear('city')">&#8855;</span>
+    </h2>
+  </div>
+
+  <form>
+    <fieldset>
+      <label for="country">Country:</label><br /><br />
+      <select
+        #country
+        name="country"
+        id="country"
+        (change)="onCountryChange($event)"
+      >
+        <option [value]="null">-- Select Your Country --</option>
+        <option *ngFor="let country of countries" [value]="country | json">
+          {{ country.flag }}&nbsp;&nbsp;{{ country.name }}
+        </option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <label for="state">State:</label><br /><br />
+      <select
+        *ngIf="states"
+        #state
+        name="state"
+        id="state"
+        (change)="onStateChange($event)"
+      >
+        <option [value]="null">-- Select Your State --</option>
+        <option *ngFor="let state of states" [value]="state | json">
+          {{ state.name }}
+        </option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <label for="city">City:</label><br /><br />
+      <select
+        *ngIf="cities"
+        #city
+        name="city"
+        id="city"
+        (change)="onCityChange($event)"
+      >
+        <option [value]="null">-- Select Your City --</option>
+        <option *ngFor="let city of cities" [value]="city | json">
+          {{ city.name }}
+        </option>
+      </select>
+    </fieldset>
+  </form>
+</section>
